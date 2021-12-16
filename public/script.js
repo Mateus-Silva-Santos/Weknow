@@ -8,7 +8,7 @@ document.getElementById("form_cadastro").addEventListener("submit", (e) => {
     const descricaoProduto = document.querySelector("#prod_desc").value; // pega o valor do campo de descrição
     e.preventDefault() // Não recarrega a página
     try {
-        fetch(api_url, // chama a API
+        fetch(api_url, // Chamar a API
             {
                 method: 'POST', // Tipo de chamada
                 headers: {
@@ -66,8 +66,8 @@ function atualizarValores(){
     const prod_desc = document.querySelector('#prod_desc').value;
 
         // Chamar API
-        fetch(api_url+"/"+prod_id,{
-            method:"PUT",
+        fetch(api_url+"/"+prod_id,{ // Chamar API
+            method:"PUT", // Tipo de chamada
             headers:{
                 "Content-Type": "application/json; charset=UTF-8"
             },
@@ -90,38 +90,40 @@ function atualizarValores(){
 
 // Deletar Produto:
 function deletarProduto(_id){
-    console.log(_id);
-    fetch(api_url+"/"+_id,{
-        method:"DELETE",
+    fetch(api_url+"/"+_id,{ // Chamar API
+        method:"DELETE", // Tipo de chamada
         headers:{
             "Content-Type": "application/json; charset=UTF-8",
         }
     }).then(response => console.log(response)).then((produto) => {
-        construirTabela();
+        construirTabela(); // Atualizar a tabela
     });
 }
 
 // Obter Dados e Gerar Lista:
 async function construirTabela(){
-    const produtos = await fetch(api_url, // chama a API
+    const produtos = await fetch(api_url, // Chamar a API
             {
                 method: 'GET', // Tipo de chamada
                 headers: {
                     "Content-Type": "application/json; charset=UTF-8" // Configuração do tipo de conteúdo que deseja passar
                 }
             }).then(response => response.json()).then((produtos) => {
-                mostrarDados(produtos);
-                document.querySelector("#prod_desc").value = "";
+                mostrarDados(produtos); //Montar Tabela
+                document.querySelector("#prod_desc").value = ""; // Limpa o valor do campo de descrição
             });
 }
 
 // Montar exibição dos registros da tabela:
 function mostrarDados(produtos){
-    let linhaTabela = "";
+    let linhaTabela = ""; // Váriavel de montagem da linha
     for (let produto of produtos){
-        const {_id,descricao} = produto;
+        // Pegar os valores
+        const {_id,descricao} = produto; 
+        //Montar Linha
         linhaTabela += `<tr><td>${_id}</td><td>${descricao}</td><td onClick="editarProduto('${_id}','${descricao}')"><i class="fa fa-pen" aria-hidden="true"></i></td><td onClick="deletarProduto('${_id}')"><i class="fa fa-trash"></i></td></tr>`
     }
+    // Anexa linha a tabela
     document.getElementById('result-table').innerHTML = linhaTabela;
 }
 
