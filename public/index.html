@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weknow - Tela de Produtos</title>
+    <!-- Importar estilos css-->
     <link rel="stylesheet" href="styles.css">
+    <!-- Importar biblioteca FontAwesome 5-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.0/css/all.css">
 </head>
 <body>
@@ -14,37 +16,47 @@
         <h1 class="center">
             Gerenciamento de Produtos
         </h1>
+        <!-- Formulário para Pesquisar Produto-->
         <form action="#" id="form_pesquisa">
             <div class="flex">
-                <input type="number" min=0 id="prod_id" placeholder="ID do Produto" required/>
+                <!-- Campo de ID-->
+                <input type="text" id="prod_id" placeholder="ID do Produto" required/>
+                <!-- Botão de Pesquisar-->
                 <button type="submit">Pesquisar</button>
             </div>
         </form>
         <br/>
+        <!-- Formulário de Cadastro de Produto-->
         <form action="#" id="form_cadastro">
             <div class="flex">
-                <input type="text" id="prod_name" placeholder="Nome do Produto" required/>
+                <!-- Input de Id-->
+                <input type="text" id="prod_cod_id" hidden/>
+                <!-- Campo de descrição-->
                 <input type="text" id="prod_desc" placeholder="Descrição do Produto" required/>
-                <button type="submit" onClick="construirTabela()">Cadastrar</button>
+                <!--Botão de Cadastrar-->
+                <button type="submit" onClick="construirTabela()" id="btn_cadastrar">Cadastrar</button>
+                <!-- Botão de Atualizar-->
+                <button type="button" onClick="atualizarValores()" id="btn_atualizar" style="background-color:#7f8c8d;" disabled>Atualizar</button>
             </div>
         </form>
         <br/>
+        <!-- Tabela-->
         <table align="center">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Nome</th>
                     <th>Descrição</th>
                     <th>Editar</th>
                     <th>Excluir</th>
                 </tr>
             </thead>
-            <tbody id="result-table">
-            </tbody>
+            <!-- Campo que exibe os registros-->
+            <tbody id="result-table"></tbody>
         </table>
     </div>
     <div</div>
-    <script src="script.js"></script>
+    <!-- Importar funções Javascript -->
+    <script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>

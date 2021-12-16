@@ -39,6 +39,9 @@ button{
     background:#8A60EB;
     cursor: pointer;
     font-size: 16px;
+
+}
+button:not(#btn_cadastrar){
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
 }
@@ -58,7 +61,12 @@ table td:nth-child(4), table td:nth-child(5){
     display: table-cell I!important;
     text-align: center;
 }
-
+.fa-pen{
+    color: #505050;
+    font-size: 18px;
+    display: table-cell I!important;
+    text-align: center;
+}
 .finished {
     color:#28a745;
     text-decoration: line-through;
