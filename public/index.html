@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weknow - Tela de Produtos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.0/css/all.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="center">
+            Gerenciamento de Produtos
+        </h1>
+        <form action="#" id="form_pesquisa">
+            <div class="flex">
+                <input type="number" min=0 id="prod_id" placeholder="ID do Produto" required/>
+                <button type="submit">Pesquisar</button>
+            </div>
+        </form>
+        <br/>
+        <form action="#" id="form_cadastro">
+            <div class="flex">
+                <input type="text" id="prod_name" placeholder="Nome do Produto" required/>
+                <input type="text" id="prod_desc" placeholder="Descrição do Produto" required/>
+                <button type="submit" onClick="construirTabela()">Cadastrar</button>
+            </div>
+        </form>
+        <br/>
+        <table align="center">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Editar</th>
+                    <th>Excluir</th>
+                </tr>
+            </thead>
+            <tbody id="result-table">
+            </tbody>
+        </table>
+    </div>
+    <div</div>
+    <script src="script.js"></script>
+</body>
+
+</html>
